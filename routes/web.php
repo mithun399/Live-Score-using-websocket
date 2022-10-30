@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\scoreController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('score');
 });
+Route::get('/update', function () {
+    return view('scoreupdate');
+});
+Route::post('/pushScore', function () {
+    return view('scoreupdate');
+});
+Route::post('pushScoreValue',[scoreController::class,'pushScoreValue']);
